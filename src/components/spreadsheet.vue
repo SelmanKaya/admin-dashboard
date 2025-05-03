@@ -1,145 +1,161 @@
 <template>
-    <div class="p-4 dark:bg-gray-800 min-h-screen">
-      <h2 class="text-2xl font-bold mb-4 text-white">Makine Mühendisliği Veri Tablosu</h2>
-      <div class="flex justify-end gap-4 mb-4">
-        <button @click="startAddingRow" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Yeni Satır Ekle</button>
-        <button @click="exportTable" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">CSV Olarak Dışa Aktar</button>
-      </div>
-      <ModalDialog v-model="selectedCategory" :show="currentStep === 1" :endpoint="'/users'" title="Kategori Seçin" @next="goToStep(2)" @cancel="cancelAddingRow" />
-      <ModalDialog v-model="selectedSupplier" :show="currentStep === 2" :endpoint="'/posts'" title="Tedarikçi Seçin" @next="goToStep(3)" @cancel="cancelAddingRow" />
-      <ModalDialog v-model="selectedMaterial" :show="currentStep === 3" :endpoint="'/albums'" title="Malzeme Seçin" @next="goToStep(4)" @cancel="cancelAddingRow" />
-      <ModalDialog v-model="selectedFinish" :show="currentStep === 4" :endpoint="'/todos'" title="Bitirme Seçin" @next="addRow" @cancel="cancelAddingRow" />
-      <HotTable ref="hotTable" :settings="hotSettings" />
+  <div class="p-4 dark:bg-gray-800 min-h-screen">
+    <h2 class="text-2xl font-bold mb-4 text-white">Makine Mühendisliği Veri Tablosu</h2>
+    <div class="flex justify-end gap-4 mb-4">
+      <button @click="exportTable" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">CSV Olarak Dışa
+        Aktar</button>
     </div>
-  </template>
-  
-  <script setup>
-  import { ref } from 'vue';
-  import { HotTable } from '@handsontable/vue3';
-  import 'handsontable/dist/handsontable.full.css';
-  import { registerAllModules } from 'handsontable/registry';
-  import ModalDialog from './ModalDialog.vue';
-  import axios from 'axios';
-  
-  // Tüm Handsontable modüllerini kaydet
-  registerAllModules();
-  
-  // Bilgi çekme fonksiyonları
-  const fetchCategoryName = async (id) => {
-    if (!id) return 'Bilinmeyen';
-    try {
-      const response = await axios.get(`https://jsonplaceholder.typicode.com/users/${id}`);
-      return response.data.name || 'Bilinmeyen';
-    } catch (err) {
-      console.error('Kategori adı çekme hatası:', err);
-      return 'Bilinmeyen';
-    }
-  };
-  
-  const fetchSupplierTitle = async (id) => {
-    if (!id) return 'Bilinmeyen';
-    try {
-      const response = await axios.get(`https://jsonplaceholder.typicode.com/posts/${id}`);
-      return response.data.title || 'Bilinmeyen';
-    } catch (err) {
-      console.error('Tedarikçi başlığı çekme hatası:', err);
-      return 'Bilinmeyen';
-    }
-  };
-  
-  const fetchMaterialTitle = async (id) => {
-    if (!id) return 'Bilinmeyen';
-    try {
-      const response = await axios.get(`https://jsonplaceholder.typicode.com/albums/${id}`);
-      return response.data.title || 'Bilinmeyen';
-    } catch (err) {
-      console.error('Malzeme başlığı çekme hatası:', err);
-      return 'Bilinmeyen';
-    }
-  };
-  
-  const fetchFinishTitle = async (id) => {
-    if (!id) return 'Bilinmeyen';
-    try {
-      const response = await axios.get(`https://jsonplaceholder.typicode.com/todos/${id}`);
-      return response.data.title || 'Bilinmeyen';
-    } catch (err) {
-      console.error('Bitirme başlığı çekme hatası:', err);
-      return 'Bilinmeyen';
-    }
-  };
-  
-  // Durum yönetimi
-  const currentStep = ref(0);
-  const selectedCategory = ref(null);
-  const selectedSupplier = ref(null);
-  const selectedMaterial = ref(null);
-  const selectedFinish = ref(null);
-  
-  // Tablo ayarları
-  const hotSettings = ref({
-    data: [],
-    columns: [
-      { data: 'category', title: 'Kategori' },
-      { data: 'supplier', title: 'Tedarikçi' },
-      { data: 'material', title: 'Malzeme' },
-      { data: 'finish', title: 'Bitirme' }
-    ],
-    colHeaders: true,
-    rowHeaders: true,
-    stretchH: 'all',
-    licenseKey: 'non-commercial-and-evaluation',
-    height: 'auto',
-    minCols: 4
-  });
-  
-  const hotTable = ref(null);
-  
-  // Yeni satır ekleme
-  const startAddingRow = () => {
-    currentStep.value = 1;
-  };
-  
-  // Modal adım geçişleri
-  const goToStep = (step) => {
-    currentStep.value = step;
-  };
-  
-  // Satır ekleme (async)
-  const addRow = () => {
-  const categoryName = selectedCategory.value ? selectedCategory.value.name : 'Bilinmeyen';
-  const supplierTitle = selectedSupplier.value ? selectedSupplier.value.title : 'Bilinmeyen';
-  const materialTitle = selectedMaterial.value ? selectedMaterial.value.title : 'Bilinmeyen';
-  const finishTitle = selectedFinish.value ? selectedFinish.value.title : 'Bilinmeyen';
-  hotSettings.value.data.push({
-    category: categoryName,
-    supplier: supplierTitle,
-    material: materialTitle,
-    finish: finishTitle
-  });
-  resetSelections();
+    <div class="mb-4">
+      <label class="block mb-2 text-white">Ana Kategori</label>
+      <select v-model="selectedMainCategory" class="w-full p-2 border rounded text-white">
+        <option :value="null" disabled>Seçiniz</option>
+        <option v-for="option in mainCategoryOptions" :key="option.id" :value="option">{{ option.name }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2 text-white">Alt Kategori 1</label>
+      <select v-model="selectedSubCategory1" :disabled="!selectedMainCategory"
+        class="w-full p-2 border rounded  text-white">
+        <option :value="null" disabled>Seçiniz</option>
+        <option v-for="option in subCategory1Options" :key="option.id" :value="option">{{ option.name }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2 text-white">Ekipman/Malzeme</label>
+      <select v-model="selectedSubCategory2" :disabled="!selectedSubCategory1"
+        class="w-full p-2 border rounded text-white">
+        <option :value="null" disabled>Seçiniz</option>
+        <option v-for="option in subCategory2Options" :key="option.id" :value="option">{{ option.name }}</option>
+      </select>
+    </div>
+    <div class="mb-4">
+      <label class="block mb-2 text-white">Marka Seciniz</label>
+      <select v-model="selectedSubCategory3" :disabled="!selectedSubCategory2"
+        class="w-full p-2 border rounded text-white">
+        <option :value="null" disabled>Seçiniz</option>
+        <option v-for="option in subCategory3Options" :key="option.id" :value="option">{{ option.name }}</option>
+      </select>
+    </div>
+    <div class="max-w-md mx-auto mb-6 p-4 bg-gray-500 rounded-xl shadow-lg">
+      <h3 class="text-xl font-bold text-white mb-4 border-b border-gray-600 pb-2">Seçilen Değerler</h3>
+      <div class="space-y-3 text-sm text-white">
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-300">Ana Kategori:</span>
+          <span>{{ selectedMainCategory ? selectedMainCategory.name : 'Seçilmedi' }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-300">Alt Kategori 1:</span>
+          <span>{{ selectedSubCategory1 ? selectedSubCategory1.name : 'Seçilmedi' }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-300">Ekipman/Malzeme:</span>
+          <span>{{ selectedSubCategory2 ? selectedSubCategory2.name : 'Seçilmedi' }}</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-300">Marka:</span>
+          <span>{{ selectedSubCategory3 ? selectedSubCategory3.name : 'Seçilmedi' }}</span>
+        </div>
+      </div>
+    </div>
+
+
+    <button @click="addRow"
+      :disabled="!selectedMainCategory || !selectedSubCategory1 || !selectedSubCategory2 || !selectedSubCategory3"
+      class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Satır Ekle</button>
+    <HotTable ref="hotTable" :settings="hotSettings" />
+  </div>
+</template>
+
+<script setup>
+import { ref, watch } from 'vue';
+import { HotTable } from '@handsontable/vue3';
+import 'handsontable/dist/handsontable.full.css';
+import { registerAllModules } from 'handsontable/registry';
+import { fakeData } from '../data/fakeData';
+
+// Tüm Handsontable modüllerini kaydet
+registerAllModules();
+
+// Tablo ayarları
+const hotSettings = ref({
+  data: [],
+  columns: [
+    { data: 'mainCategory', title: 'Ana Kategori' },
+    { data: 'subCategory1', title: 'Alt Kategori 1' },
+    { data: 'subCategory2', title: 'Ekipman/Malzeme' },
+    { data: 'subCategory3', title: 'Marka' }
+  ],
+  colHeaders: true,
+  rowHeaders: true,
+  stretchH: 'all',
+  licenseKey: 'non-commercial-and-evaluation',
+  height: 'auto',
+  minCols: 4
+});
+
+const hotTable = ref(null);
+
+// Seçimler ve seçenekler
+const mainCategoryOptions = fakeData;
+const subCategory1Options = ref([]);
+const subCategory2Options = ref([]);
+const subCategory3Options = ref([]);
+const selectedMainCategory = ref(null);
+const selectedSubCategory1 = ref(null);
+const selectedSubCategory2 = ref(null);
+const selectedSubCategory3 = ref(null);
+
+// Ana kategori değiştiğinde
+watch(selectedMainCategory, (newVal) => {
+  subCategory1Options.value = newVal ? newVal.subcategories : [];
+  selectedSubCategory1.value = null;
+  selectedSubCategory2.value = null;
+  selectedSubCategory3.value = null;
+});
+
+// Alt kategori 1 değiştiğinde
+watch(selectedSubCategory1, (newVal) => {
+  subCategory2Options.value = newVal ? newVal.subcategories : [];
+  selectedSubCategory2.value = null;
+  selectedSubCategory3.value = null;
+});
+
+// Alt kategori 2 değiştiğinde
+watch(selectedSubCategory2, (newVal) => {
+  subCategory3Options.value = newVal ? newVal.subcategories : [];
+  selectedSubCategory3.value = null;
+});
+
+// Satır ekleme
+const addRow = () => {
+  if (selectedMainCategory.value && selectedSubCategory1.value && selectedSubCategory2.value && selectedSubCategory3.value) {
+    hotSettings.value.data.push({
+      mainCategory: selectedMainCategory.value.name,
+      subCategory1: selectedSubCategory1.value.name,
+      subCategory2: selectedSubCategory2.value.name,
+      subCategory3: selectedSubCategory3.value.name
+    });
+    // Seçimleri sıfırla
+    selectedMainCategory.value = null;
+    selectedSubCategory1.value = null;
+    selectedSubCategory2.value = null;
+    selectedSubCategory3.value = null;
+  }
 };
-  
-  // İptal işlemi
-  const cancelAddingRow = () => {
-    resetSelections();
-  };
-  
-  // Seçimleri sıfırlama
-  const resetSelections = () => {
-    selectedCategory.value = null;
-    selectedSupplier.value = null;
-    selectedMaterial.value = null;
-    selectedFinish.value = null;
-    currentStep.value = 0;
-  };
-  
-  // CSV dışa aktarma
-  const exportTable = () => {
-    if (hotTable.value) {
-      hotTable.value.hotInstance.getPlugin('exportFile').downloadFile('csv', { filename: 'muhendislik_verileri' });
-    } else {
-      console.error('Tablo örneği bulunamadı.');
-    }
-  };
-  </script>
+
+// CSV dışa aktarma
+const exportTable = () => {
+  if (hotTable.value) {
+    // Hata ayıklama: Dışa aktarma öncesi tablo verilerini konsola yazdır
+    console.log('Dışa aktarılacak tablo verileri:', hotSettings.value.data);
+    hotTable.value.hotInstance.getPlugin('exportFile').downloadFile('csv', {
+      filename: 'muhendislik_verileri',
+      columnHeaders: true,
+      exportHiddenRows: true,
+      exportHiddenColumns: true
+    });
+  } else {
+    console.error('Tablo örneği bulunamadı.');
+  }
+};
+</script>

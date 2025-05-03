@@ -48,9 +48,12 @@
   
           <!-- Profile -->
           <div class="flex items-center">
+            <router-link to="/EngineerLogin">
             <button class="w-9 h-9 rounded-full bg-cyan-600 flex items-center justify-center text-white text-base font-semibold border-2 border-transparent hover:border-gray-300 focus:border-gray-300 transition-all duration-200">
               <span class="uppercase">U</span>
             </button>
+          </router-link>
+            
           </div>
         </div>
       </div>

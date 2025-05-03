@@ -3,7 +3,8 @@ import Home from '../components/Home.vue';
 import Login from '../components/Login.vue';
 import Register from '../components/Register.vue';
 import Home2 from '../components/Home2.vue';
-
+import CustomerOrEngineer from '../components/CustomerLogin.vue';
+import EngineerLogin from '../components/EngineerLogin.vue';
 // Yer tutucu bileşen (gerçek projede ilgili bileşenleri oluşturun)
 const Placeholder = { template: '<div>Rota Sayfası</div>' };
 
@@ -11,7 +12,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home, // Ana sayfa olarak App.vue kullanılıyor
+    component: Home,
   },
   {
     path: '/home2',
@@ -32,6 +33,21 @@ const routes = [
     path: '/spreadsheet',
     name : "Sheet",
     component :() => import('../components/spreadsheet.vue')
+  },
+  {
+    path: '/CustomerLogin',
+    name: 'Customer',
+    component: () => import('../components/CustomerLogin.vue')
+  },
+  {
+    path: '/EngineerLogin',
+    name: 'Engineer',
+    component :() => import('../components/EngineerLogin.vue')
+  },
+  {
+    path: '/AskPage',
+    name: 'AskPage',
+    component: () => import('../components/AskPage.vue')
   },
   {
     path: '/dosya-havuzu',
