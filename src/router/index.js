@@ -50,6 +50,12 @@ const routes = [
     component: () => import('../components/AskPage.vue')
   },
   {
+    path : '/customize',
+    name: 'Customize',
+    component: () => import('../components/Customize.vue')
+
+  },
+  {
     path: '/dosya-havuzu',
     name: 'FileRepository',
     component: Placeholder,

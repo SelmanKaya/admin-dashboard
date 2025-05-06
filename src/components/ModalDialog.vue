@@ -12,19 +12,13 @@
             <button @click="onCancel" class="bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-600">İptal</button>
             <button @click="onNext" :disabled="!selected" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Sonraki</button>
           </div>
-          <div class="mt-4">
-            <h3 class="text-lg font-semibold">Seçilen Değerler</h3>
-            <p>Kategori: {{ selectedCategory?.name || 'Seçilmedi' }}</p>
-            <p>Tedarikçi: {{ selectedSupplier?.title || 'Seçilmedi' }}</p>
-            <p>Malzeme: {{ selectedMaterial?.title || 'Seçilmedi' }}</p>
-            <p>Bitirme: {{ selectedFinish?.title || 'Seçilmedi' }}</p>
-            </div>
         </div>
       </div>
     </teleport>
   </template>
   
   <script setup>
+  ///burada pop up olusturmsutuk ama kullanilmiyor artik
   import { ref, onMounted, watch } from 'vue';
   import axios from 'axios';
   

@@ -1,4 +1,4 @@
-export const fakeData = [
+export const CategoryData = [
     {
         id: 1,
         name: "Isıtma",
@@ -11,27 +11,27 @@ export const fakeData = [
                         id: 111,
                         name: "Doğalgaz Boruları",
                         subcategories: [
-                            { id: 1111, name: "Buderus" },
-                            { id: 1112, name: "Bosch" },
-                            { id: 1113, name: "Demirdöküm" }
+                            { id: 1111, name: "BORUSAN  " },
+                            { id: 1112, name: "ÇAYIROVA" },
+                            { id: 1113, name: "TOSÇELİK" }
                         ]
                     },
                     {
                         id: 112,
                         name: "Dirsekler",
                         subcategories: [
-                            { id: 1121, name: "Buderus" },
-                            { id: 1122, name: "Bosch" },
-                            { id: 1123, name: "Demirdöküm" }
+                            { id: 1121, name: "DİŞLİ İÇİN TRAKYA DÖKÜM" },
+                            { id: 1122, name: "EKBAŞ" },
+                            { id: 1123, name: "İNFİRİT" }
                         ]
                     },
                     {
                         id: 113,
                         name: "Te Bağlantıları",
                         subcategories: [
-                            { id: 1131, name: "Buderus" },
-                            { id: 1132, name: "Bosch" },
-                            { id: 1133, name: "Demirdöküm" }
+                            { id: 1131, name: "SARDOĞAN" },
+                            { id: 1132, name: "ERG" },
+                            { id: 1133, name: "NALBANTOĞLU" }
                         ]
                     },
                     {
@@ -65,9 +65,8 @@ export const fakeData = [
                         id: 117,
                         name: "Kompansatörler",
                         subcategories: [
-                            { id: 1171, name: "Buderus" },
-                            { id: 1172, name: "Bosch" },
-                            { id: 1173, name: "Demirdöküm" }
+                            { id: 1171, name: "DUYAR" },
+                            { id: 1172, name: "AYVAZ" },
                         ]
                     }
                 ]
@@ -80,54 +79,64 @@ export const fakeData = [
                         id: 121,
                         name: "Küresel Vana",
                         subcategories: [
-                            { id: 1211, name: "Buderus" },
-                            { id: 1212, name: "Bosch" },
-                            { id: 1213, name: "Demirdöküm" }
+                            { id: 1211, name: "KAS" },
+                            { id: 1212, name: "KALDE" },
+                            { id: 1213, name: "KLEPSAN" },
+                            { id: 1214, name: "KONSAN" },
+                            { id: 1215, name: "ECA" },
                         ]
                     },
                     {
                         id: 122,
                         name: "Kelebek Vana",
                         subcategories: [
-                            { id: 1221, name: "Buderus" },
-                            { id: 1222, name: "Bosch" },
-                            { id: 1223, name: "Demirdöküm" }
+                            { id: 1211, name: "KAS" },
+                            { id: 1212, name: "KALDE" },
+                            { id: 1213, name: "KLEPSAN" },
+                            { id: 1212, name: "KONSAN" },
+                            { id: 1212, name: "ECA" },
                         ]
                     },
                     {
                         id: 123,
                         name: "Emniyet Ventili",
                         subcategories: [
-                            { id: 1231, name: "Buderus" },
-                            { id: 1232, name: "Bosch" },
-                            { id: 1233, name: "Demirdöküm" }
+                            { id: 1221, name: "KAS" },
+                            { id: 1222, name: "KALDE" },
+                            { id: 1223, name: "KLEPSAN" },
+                            { id: 1224, name: "KONSAN" },
+                            { id: 1225, name: "ECA" },
                         ]
                     },
                     {
                         id: 124,
                         name: "Basınç Düşürücü Vana",
                         subcategories: [
-                            { id: 1241, name: "Buderus" },
-                            { id: 1242, name: "Bosch" },
-                            { id: 1243, name: "Demirdöküm" }
+                            { id: 1231, name: "KAS" },
+                            { id: 1232, name: "KALDE" },
+                            { id: 1233, name: "KLEPSAN" },
+                            { id: 1234, name: "KONSAN" },
+                            { id: 1235, name: "ECA" },
                         ]
                     },
                     {
                         id: 125,
                         name: "Solenoid Vana",
                         subcategories: [
-                            { id: 1251, name: "Buderus" },
-                            { id: 1252, name: "Bosch" },
-                            { id: 1253, name: "Demirdöküm" }
+                            { id: 1241, name: "KAS" },
+                            { id: 1242, name: "KALDE" },
+                            { id: 1243, name: "KLEPSAN" },
+                            { id: 1244, name: "KONSAN" },
+                            { id: 1245, name: "ECA" },
                         ]
                     },
                     {
                         id: 126,
                         name: "Regülatör",
                         subcategories: [
-                            { id: 1261, name: "Buderus" },
-                            { id: 1262, name: "Bosch" },
-                            { id: 1263, name: "Demirdöküm" }
+                            { id: 1261, name: "ESCA" },
+                            { id: 1262, name: "FRS" },
+                            { id: 1263, name: "MADAS" }
                         ]
                     }
                 ]
@@ -140,45 +149,46 @@ export const fakeData = [
                         id: 131,
                         name: "Kombi",
                         subcategories: [
-                            { id: 1311, name: "Buderus" },
-                            { id: 1312, name: "Bosch" },
-                            { id: 1313, name: "Demirdöküm" }
+                            { id: 1311, name: "BUDERUS" },
+                            { id: 1312, name: "BOSCH" },
+                            { id: 1313, name: "DEMİRDÖKÜM" }
                         ]
                     },
                     {
                         id: 132,
                         name: "Kazan",
                         subcategories: [
-                            { id: 1321, name: "Buderus" },
-                            { id: 1322, name: "Bosch" },
-                            { id: 1323, name: "Demirdöküm" }
+                            { id: 1321, name: "BUDERUS" },
+                            { id: 1322, name: "ERENSAN" },
+                            { id: 1323, name: "WİSSMAN" }
                         ]
                     },
                     {
                         id: 133,
                         name: "Brülör",
                         subcategories: [
-                            { id: 1331, name: "Buderus" },
-                            { id: 1332, name: "Bosch" },
-                            { id: 1333, name: "Demirdöküm" }
+                            { id: 1331, name: "ELKO" },
+                            { id: 1332, name: "GÖKÇE" },
+                            { id: 1333, name: "BALTUR" },
+                            { id: 1334, name: "BAYMAK" },
+                            { id: 1335, name: "ÜRET" },
                         ]
                     },
                     {
                         id: 134,
                         name: "Termostatik Kontrol Sistemleri",
                         subcategories: [
-                            { id: 1341, name: "Buderus" },
-                            { id: 1342, name: "Bosch" },
-                            { id: 1343, name: "Demirdöküm" }
+                            { id: 1341, name: "HONEYWELL" },
+                            { id: 1342, name: "DUFOSS" },
+                            { id: 1343, name: "ONETROOP" }
                         ]
                     },
                     {
                         id: 135,
                         name: "Isı Değiştiriciler",
                         subcategories: [
-                            { id: 1351, name: "Buderus" },
-                            { id: 1352, name: "Bosch" },
-                            { id: 1353, name: "Demirdöküm" }
+                            { id: 1351, name: "ALFALEWALL" },
+                            { id: 1352, name: "MİD" },
                         ]
                     }
                 ]
@@ -191,54 +201,58 @@ export const fakeData = [
                         id: 141,
                         name: "Panel Radyatör",
                         subcategories: [
-                            { id: 1411, name: "Buderus" },
-                            { id: 1412, name: "Bosch" },
-                            { id: 1413, name: "Demirdöküm" }
+                            { id: 1411, name: "ECA" },
+                            { id: 1412, name: "DEMİRDÖKÜM" },
+                            { id: 1413, name: "PEKPAN" },
+                            { id: 1414, name: "ELKO" },
                         ]
                     },
                     {
                         id: 142,
-                        name: "Döküm Radyatör",
+                        name: "Alüminyum Radyatör",
                         subcategories: [
-                            { id: 1421, name: "Buderus" },
-                            { id: 1422, name: "Bosch" },
-                            { id: 1423, name: "Demirdöküm" }
+                            { id: 1421, name: "RADYAL" },
+                            { id: 1422, name: "DG" },
+                            { id: 1423, name: "VİZYON" }
                         ]
                     },
                     {
                         id: 143,
                         name: "Havlupan",
                         subcategories: [
-                            { id: 1431, name: "Buderus" },
-                            { id: 1432, name: "Bosch" },
-                            { id: 1433, name: "Demirdöküm" }
+                            
                         ]
                     },
                     {
                         id: 144,
                         name: "Yerden Isıtma Boruları (PEX-A, PERT)",
                         subcategories: [
-                            { id: 1441, name: "Buderus" },
-                            { id: 1442, name: "Bosch" },
-                            { id: 1443, name: "Demirdöküm" }
+                            { id: 1431, name: "REHAU" },
+                            { id: 1432, name: "FRANKSECHE" },
+                            { id: 1433, name: "FIRAT" },
+                            { id: 1434, name: "KALDE" },                            
                         ]
                     },
                     {
                         id: 145,
                         name: "Kollektör ve Kollektör Dolabı",
                         subcategories: [
-                            { id: 1451, name: "Buderus" },
-                            { id: 1452, name: "Bosch" },
-                            { id: 1453, name: "Demirdöküm" }
+                            { id: 1431, name: "REHAU" },
+                            { id: 1432, name: "FRANKSECHE" },
+                            { id: 1433, name: "FIRAT" },
+                            { id: 1434, name: "KALDE" },
+                            { id: 1435, name: "KAS" },
                         ]
                     },
                     {
                         id: 146,
                         name: "Termostatik Vana",
                         subcategories: [
-                            { id: 1461, name: "Buderus" },
-                            { id: 1462, name: "Bosch" },
-                            { id: 1463, name: "Demirdöküm" }
+                            { id: 1441, name: "KAS" },
+                            { id: 1442, name: "KALDE" },
+                            { id: 1443, name: "KLEPSAN" },
+                            { id: 1444, name: "KONSAN" },
+                            { id: 1445, name: "ECA" },
                         ]
                     }
                 ]
@@ -251,9 +265,9 @@ export const fakeData = [
                         id: 151,
                         name: "Çift Cidarlı Baca",
                         subcategories: [
-                            { id: 1511, name: "Buderus" },
-                            { id: 1512, name: "Bosch" },
-                            { id: 1513, name: "Demirdöküm" }
+                            { id: 1511, name: "ŞAHİ BACA" },
+                            { id: 1512, name: "ÖZENER ÇELİK" },
+                            { id: 1513, name: "ROTEK" }
                         ]
                     },
                     {
@@ -410,36 +424,38 @@ export const fakeData = [
                         id: 211,
                         name: "PPRC Borular",
                         subcategories: [
-                            { id: 2111, name: "Buderus" },
-                            { id: 2112, name: "Bosch" },
-                            { id: 2113, name: "Demirdöküm" }
+                            { id: 2111, name: "FIRAT" },
+                            { id: 2112, name: "KALDE" },
+                            { id: 2113, name: "HAKAN" },
+                            { id: 2114, name: "PLASTİK" },
                         ]
                     },
                     {
                         id: 212,
                         name: "PEX Borular",
                         subcategories: [
-                            { id: 2121, name: "Buderus" },
-                            { id: 2122, name: "Bosch" },
-                            { id: 2123, name: "Demirdöküm" }
+                            { id: 2121, name: "FIRAT" },
+                            { id: 2122, name: "KALDE" },
+                            { id: 2123, name: "HAKAN" },
+                            { id: 2124, name: "PLASTİK" },
                         ]
                     },
                     {
                         id: 213,
                         name: "Bakır Borular",
                         subcategories: [
-                            { id: 2131, name: "Buderus" },
-                            { id: 2132, name: "Bosch" },
-                            { id: 2133, name: "Demirdöküm" }
+                            { id: 2131, name: "TUNÇ" },
+                            { id: 2132, name: "METAL" },
                         ]
                     },
                     {
                         id: 214,
                         name: "Dirsek, Te ve Manşon Bağlantı Elemanları",
                         subcategories: [
-                            { id: 2141, name: "Buderus" },
-                            { id: 2142, name: "Bosch" },
-                            { id: 2143, name: "Demirdöküm" }
+                            { id: 2141, name: "FIRAT" },
+                            { id: 2142, name: "KALDE" },
+                            { id: 2143, name: "HAKAN" },
+                            { id: 2144, name: "PLASTİK" },
                         ]
                     },
                     {
@@ -455,9 +471,9 @@ export const fakeData = [
                         id: 216,
                         name: "Hidrofor Sistemi (Basınç Yükseltici)",
                         subcategories: [
-                            { id: 2161, name: "Buderus" },
-                            { id: 2162, name: "Bosch" },
-                            { id: 2163, name: "Demirdöküm" }
+                            { id: 2161, name: "WİLO" },
+                            { id: 2162, name: "BAYMAK" },
+                            { id: 2163, name: "GRUNFOSS" }
                         ]
                     }
                 ]
@@ -521,54 +537,54 @@ export const fakeData = [
                         id: 231,
                         name: "Lavabo Bataryası",
                         subcategories: [
-                            { id: 2311, name: "Buderus" },
-                            { id: 2312, name: "Bosch" },
-                            { id: 2313, name: "Demirdöküm" }
+                            { id: 2311, name: "VİTRA" },
+                            { id: 2312, name: "GEBERIT" },
+                            { id: 2313, name: "ECA" }
                         ]
                     },
                     {
                         id: 232,
-                        name: "Duş Bataryası",
+                        name: "Duş Bataryası - SU SAYACI",
                         subcategories: [
-                            { id: 2321, name: "Buderus" },
-                            { id: 2322, name: "Bosch" },
-                            { id: 2323, name: "Demirdöküm" }
+                            { id: 2321, name: "VİTRA" },
+                            { id: 2322, name: "GEBERIT" },
+                            { id: 2323, name: "ECA" }
                         ]
                     },
                     {
                         id: 233,
                         name: "Evye Bataryası",
                         subcategories: [
-                            { id: 2331, name: "Buderus" },
-                            { id: 2332, name: "Bosch" },
-                            { id: 2333, name: "Demirdöküm" }
+                            { id: 2331, name: "VİTRA" },
+                            { id: 2332, name: "GEBERIT" },
+                            { id: 2333, name: "ECA" }
                         ]
                     },
                     {
                         id: 234,
                         name: "Fotoselli Batarya",
                         subcategories: [
-                            { id: 2341, name: "Buderus" },
-                            { id: 2342, name: "Bosch" },
-                            { id: 2343, name: "Demirdöküm" }
+                            { id: 2341, name: "VİTRA" },
+                            { id: 2342, name: "GEBERIT" },
+                            { id: 2343, name: "ECA" }
                         ]
                     },
                     {
                         id: 235,
                         name: "Taharet Musluğu",
                         subcategories: [
-                            { id: 2351, name: "Buderus" },
-                            { id: 2352, name: "Bosch" },
-                            { id: 2353, name: "Demirdöküm" }
+                            { id: 2351, name: "VİTRA" },
+                            { id: 2352, name: "GEBERIT" },
+                            { id: 2353, name: "ECA" }
                         ]
                     },
                     {
                         id: 236,
                         name: "Duş Başlığı ve Seti",
                         subcategories: [
-                            { id: 2361, name: "Buderus" },
-                            { id: 2362, name: "Bosch" },
-                            { id: 2363, name: "Demirdöküm" }
+                            { id: 2361, name: "VİTRA" },
+                            { id: 2362, name: "GEBERIT" },
+                            { id: 2363, name: "ECA" }
                         ]
                     }
                 ]
@@ -632,18 +648,16 @@ export const fakeData = [
                         id: 251,
                         name: "Su Sayacı",
                         subcategories: [
-                            { id: 2511, name: "Buderus" },
-                            { id: 2512, name: "Bosch" },
-                            { id: 2513, name: "Demirdöküm" }
+                            { id: 2511, name: "BAYLAN" },
+                            { id: 2512, name: "TEKSAN" },
+                            { id: 2513, name: "KLEPSAN" }
                         ]
                     },
                     {
                         id: 252,
                         name: "Basınç Regülatörü",
                         subcategories: [
-                            { id: 2521, name: "Buderus" },
-                            { id: 2522, name: "Bosch" },
-                            { id: 2523, name: "Demirdöküm" }
+                            { id: 2521, name: "CASE" },
                         ]
                     },
                     {
@@ -680,45 +694,41 @@ export const fakeData = [
                         id: 311,
                         name: "Sprinkler Başlıkları (Pendent, Upright, Concealed)",
                         subcategories: [
-                            { id: 3111, name: "Buderus" },
-                            { id: 3112, name: "Bosch" },
-                            { id: 3113, name: "Demirdöküm" }
+                            { id: 3111, name: "AYVAZ" },
+                            { id: 3112, name: "DUYAR" },
+                            
                         ]
                     },
                     {
                         id: 312,
                         name: "Yangın Dolabı (Hortum + Nozul)",
                         subcategories: [
-                            { id: 3121, name: "Buderus" },
-                            { id: 3122, name: "Bosch" },
-                            { id: 3123, name: "Demirdöküm" }
+                            { id: 3121, name: "AYVAZ" },
+                            { id: 3122, name: "DUYAR" },
                         ]
                     },
                     {
                         id: 313,
                         name: "Yangın Söndürme Tüpleri (CO2, Kuru Kimyevi, Köpük)",
                         subcategories: [
-                            { id: 3131, name: "Buderus" },
-                            { id: 3132, name: "Bosch" },
-                            { id: 3133, name: "Demirdöküm" }
+                            { id: 3131, name: "AYVAZ" },
+                            { id: 3132, name: "DUYAR" },
                         ]
                     },
                     {
                         id: 314,
                         name: "FM200 veya Novec Gazlı Söndürme Sistemi",
                         subcategories: [
-                            { id: 3141, name: "Buderus" },
-                            { id: 3142, name: "Bosch" },
-                            { id: 3143, name: "Demirdöküm" }
+                            { id: 3141, name: "AYVAZ" },
+                            { id: 3142, name: "DUYAR" },
                         ]
                     },
                     {
                         id: 315,
                         name: "Su Sisi (Water Mist) Sistemleri",
                         subcategories: [
-                            { id: 3151, name: "Buderus" },
-                            { id: 3152, name: "Bosch" },
-                            { id: 3153, name: "Demirdöküm" }
+                            { id: 3151, name: "AYVAZ" },
+                            { id: 3152, name: "DUYAR" },
                         ]
                     }
                 ]
@@ -731,54 +741,54 @@ export const fakeData = [
                         id: 321,
                         name: "Siyah Çelik Borular (Yangına Dayanıklı)",
                         subcategories: [
-                            { id: 3211, name: "Buderus" },
-                            { id: 3212, name: "Bosch" },
-                            { id: 3213, name: "Demirdöküm" }
+                            { id: 3211, name: "BORUSAN" },
+                            { id: 3212, name: "ÇAYIROVA" },
+                            { id: 3213, name: "TOSÇELİK" }
                         ]
                     },
                     {
                         id: 322,
                         name: "Galvanizli Borular",
                         subcategories: [
-                            { id: 3221, name: "Buderus" },
-                            { id: 3222, name: "Bosch" },
-                            { id: 3223, name: "Demirdöküm" }
+                            { id: 3221, name: "BORUSAN" },
+                            { id: 3222, name: "ÇAYIROVA" },
+                            { id: 3223, name: "TOSÇELİK" }
                         ]
                     },
                     {
                         id: 323,
                         name: "Paslanmaz Çelik Borular",
                         subcategories: [
-                            { id: 3231, name: "Buderus" },
-                            { id: 3232, name: "Bosch" },
-                            { id: 3233, name: "Demirdöküm" }
+                            { id: 3231, name: "BORUSAN" },
+                            { id: 3232, name: "ÇAYIROVA" },
+                            { id: 3233, name: "TOSÇELİK" }
                         ]
                     },
                     {
                         id: 324,
                         name: "Flanşlı Borular",
                         subcategories: [
-                            { id: 3241, name: "Buderus" },
-                            { id: 3242, name: "Bosch" },
-                            { id: 3243, name: "Demirdöküm" }
+                            { id: 3241, name: "BORUSAN" },
+                            { id: 3242, name: "ÇAYIROVA" },
+                            { id: 3243, name: "TOSÇELİK" }
                         ]
                     },
                     {
                         id: 325,
                         name: "Esnek Bağlantı Hortumları (Sprinkler İçin)",
                         subcategories: [
-                            { id: 3251, name: "Buderus" },
-                            { id: 3252, name: "Bosch" },
-                            { id: 3253, name: "Demirdöküm" }
+                            { id: 3251, name: "BORUSAN" },
+                            { id: 3252, name: "ÇAYIROVA" },
+                            { id: 3253, name: "TOSÇELİK" }
                         ]
                     },
                     {
                         id: 326,
                         name: "Yangına Dayanıklı İzolasyonlu Borular",
                         subcategories: [
-                            { id: 3261, name: "Buderus" },
-                            { id: 3262, name: "Bosch" },
-                            { id: 3263, name: "Demirdöküm" }
+                            { id: 3261, name: "BORUSAN" },
+                            { id: 3262, name: "ÇAYIROVA" },
+                            { id: 3263, name: "TOSÇELİK" }
                         ]
                     }
                 ]
@@ -842,45 +852,55 @@ export const fakeData = [
                         id: 341,
                         name: "Alarm Vanası",
                         subcategories: [
-                            { id: 3411, name: "Buderus" },
-                            { id: 3412, name: "Bosch" },
-                            { id: 3413, name: "Demirdöküm" }
+                            { id: 3411, name: "KAS" },
+                            { id: 3412, name: "KALDE" },
+                            { id: 3413, name: "KLEPSAN" },
+                            { id: 3414, name: "KONSAN" },
+                            { id: 3415, name: "ECA" },
                         ]
                     },
                     {
                         id: 342,
                         name: "Test ve Drenaj Vanası",
                         subcategories: [
-                            { id: 3421, name: "Buderus" },
-                            { id: 3422, name: "Bosch" },
-                            { id: 3423, name: "Demirdöküm" }
+                            { id: 3421, name: "KAS" },
+                            { id: 3422, name: "KALDE" },
+                            { id: 3423, name: "KLEPSAN" },
+                            { id: 3424, name: "KONSAN" },
+                            { id: 3425, name: "ECA" },
                         ]
                     },
                     {
                         id: 343,
                         name: "Küresel Vana",
                         subcategories: [
-                            { id: 3431, name: "Buderus" },
-                            { id: 3432, name: "Bosch" },
-                            { id: 3433, name: "Demirdöküm" }
+                            { id: 3431, name: "KAS" },
+                            { id: 3432, name: "KALDE" },
+                            { id: 3433, name: "KLEPSAN" },
+                            { id: 3434, name: "KONSAN" },
+                            { id: 3435, name: "ECA" },
                         ]
                     },
                     {
                         id: 344,
                         name: "Kelebek Vana",
                         subcategories: [
-                            { id: 3441, name: "Buderus" },
-                            { id: 3442, name: "Bosch" },
-                            { id: 3443, name: "Demirdöküm" }
+                            { id: 3441, name: "KAS" },
+                            { id: 3442, name: "KALDE" },
+                            { id: 3443, name: "KLEPSAN" },
+                            { id: 3444, name: "KONSAN" },
+                            { id: 3445, name: "ECA" },
                         ]
                     },
                     {
                         id: 345,
                         name: "Çekvalf (Geri Akışı Önler)",
                         subcategories: [
-                            { id: 3451, name: "Buderus" },
-                            { id: 3452, name: "Bosch" },
-                            { id: 3453, name: "Demirdöküm" }
+                            { id: 3451, name: "KAS" },
+                            { id: 3452, name: "KALDE" },
+                            { id: 3453, name: "KLEPSAN" },
+                            { id: 3454, name: "KONSAN" },
+                            { id: 3455, name: "ECA" },
                         ]
                     }
                 ]
@@ -935,9 +955,9 @@ export const fakeData = [
                         id: 361,
                         name: "Yangın Pompası (Elektrikli, Dizel)",
                         subcategories: [
-                            { id: 3611, name: "Buderus" },
-                            { id: 3612, name: "Bosch" },
-                            { id: 3613, name: "Demirdöküm" }
+                            { id: 3611, name: "STANDART" },
+                            { id: 3612, name: "WİLO" },
+                            { id: 3613, name: "ETNA" }
                         ]
                     },
                     {
@@ -953,18 +973,15 @@ export const fakeData = [
                         id: 363,
                         name: "Basınç Tankı",
                         subcategories: [
-                            { id: 3631, name: "Buderus" },
-                            { id: 3632, name: "Bosch" },
-                            { id: 3633, name: "Demirdöküm" }
+                            { id: 3631, name: "REFLEK" },
+                            { id: 3632, name: "APAMET" },
                         ]
                     },
                     {
                         id: 364,
                         name: "Kollektör ve Vanaları",
                         subcategories: [
-                            { id: 3641, name: "Buderus" },
-                            { id: 3642, name: "Bosch" },
-                            { id: 3643, name: "Demirdöküm" }
+                            { id: 3641, name: "İMALAT" },
                         ]
                     }
                 ]
@@ -983,54 +1000,46 @@ export const fakeData = [
                         id: 411,
                         name: "Galvanizli Hava Kanalları (Kare/Dikdörtgen)",
                         subcategories: [
-                            { id: 4111, name: "Buderus" },
-                            { id: 4112, name: "Bosch" },
-                            { id: 4113, name: "Demirdöküm" }
+                            { id: 4111, name: "İMALAT" },
                         ]
                     },
                     {
                         id: 412,
                         name: "Spiral Yuvarlak Kanal",
-                        subcategories: [
-                            { id: 4121, name: "Buderus" },
-                            { id: 4122, name: "Bosch" },
-                            { id: 4123, name: "Demirdöküm" }
+                        subcategories: [                          
+                              { id: 4121, name: "İMALAT" },
                         ]
                     },
                     {
                         id: 413,
                         name: "Fleksible Hava Kanalı",
                         subcategories: [
-                            { id: 4131, name: "Buderus" },
-                            { id: 4132, name: "Bosch" },
-                            { id: 4133, name: "Demirdöküm" }
+                            { id: 4131, name: "İMALAT" },
+
                         ]
                     },
                     {
                         id: 414,
                         name: "Menfez",
                         subcategories: [
-                            { id: 4141, name: "Buderus" },
-                            { id: 4142, name: "Bosch" },
-                            { id: 4143, name: "Demirdöküm" }
+                            { id: 4141, name: "İMALAT" },
+
                         ]
                     },
                     {
                         id: 415,
                         name: "Anemostat",
                         subcategories: [
-                            { id: 4151, name: "Buderus" },
-                            { id: 4152, name: "Bosch" },
-                            { id: 4153, name: "Demirdöküm" }
+                            { id: 4151, name: "İMALAT" },
+
                         ]
                     },
                     {
                         id: 416,
                         name: "Hava Damperleri",
                         subcategories: [
-                            { id: 4161, name: "Buderus" },
-                            { id: 4162, name: "Bosch" },
-                            { id: 4163, name: "Demirdöküm" }
+                            { id: 4161, name: "İMALAT" },
+
                         ]
                     }
                 ]

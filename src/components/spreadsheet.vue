@@ -71,7 +71,7 @@ import { ref, watch } from 'vue';
 import { HotTable } from '@handsontable/vue3';
 import 'handsontable/dist/handsontable.full.css';
 import { registerAllModules } from 'handsontable/registry';
-import { fakeData } from '../data/fakeData';
+import { CategoryData } from '../data/CategoryData';
 
 // Tüm Handsontable modüllerini kaydet
 registerAllModules();
@@ -96,7 +96,7 @@ const hotSettings = ref({
 const hotTable = ref(null);
 
 // Seçimler ve seçenekler
-const mainCategoryOptions = fakeData;
+const mainCategoryOptions = CategoryData;
 const subCategory1Options = ref([]);
 const subCategory2Options = ref([]);
 const subCategory3Options = ref([]);
