@@ -19,7 +19,7 @@
       <div class="flex-1 px-3 py-4 overflow-y-auto">
         <ul class="space-y-1">
           <li v-for="(item, index) in navItems" :key="index">
-            <router-link :to="index === 0 ? '/spreadsheet' : '#'" :class="[
+            <router-link :to="index === 0 ? '/spreadsheet' : '#' || index === 4 ? '/customize' : '#'" :class="[
               'block px-4 py-2 rounded-md text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all duration-200',
               { 'bg-blue-500 text-white font-medium': item.active }
             ]">

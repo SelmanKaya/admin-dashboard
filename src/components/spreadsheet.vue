@@ -9,15 +9,15 @@
       <label class="block mb-2 text-white">Ana Kategori</label>
       <select v-model="selectedMainCategory" class="w-full p-2 border rounded text-white">
         <option :value="null" disabled>Seçiniz</option>
-        <option v-for="option in mainCategoryOptions" :key="option.id" :value="option">{{ option.name }}</option>
+        <option v-for="option in mainCategoryOptions" :key="option.id" :value="option" class="text-black">{{ option.name }}</option>
       </select>
     </div>
     <div class="mb-4">
       <label class="block mb-2 text-white">Alt Kategori 1</label>
       <select v-model="selectedSubCategory1" :disabled="!selectedMainCategory"
         class="w-full p-2 border rounded  text-white">
-        <option :value="null" disabled>Seçiniz</option>
-        <option v-for="option in subCategory1Options" :key="option.id" :value="option">{{ option.name }}</option>
+        <option :value="null" disabled >Seçiniz</option>
+        <option v-for="option in subCategory1Options" :key="option.id" :value="option" class="text-black">{{ option.name }}</option>
       </select>
     </div>
     <div class="mb-4">
@@ -25,7 +25,7 @@
       <select v-model="selectedSubCategory2" :disabled="!selectedSubCategory1"
         class="w-full p-2 border rounded text-white">
         <option :value="null" disabled>Seçiniz</option>
-        <option v-for="option in subCategory2Options" :key="option.id" :value="option">{{ option.name }}</option>
+        <option v-for="option in subCategory2Options" :key="option.id" :value="option " class="text-black">{{ option.name }}</option>
       </select>
     </div>
     <div class="mb-4">
@@ -33,7 +33,7 @@
       <select v-model="selectedSubCategory3" :disabled="!selectedSubCategory2"
         class="w-full p-2 border rounded text-white">
         <option :value="null" disabled>Seçiniz</option>
-        <option v-for="option in subCategory3Options" :key="option.id" :value="option">{{ option.name }}</option>
+        <option v-for="option in subCategory3Options" :key="option.id" :value="option" class="text-black" >{{ option.name }}</option>
       </select>
     </div>
     <div class="max-w-md mx-auto mb-6 p-4 bg-gray-500 rounded-xl shadow-lg">
